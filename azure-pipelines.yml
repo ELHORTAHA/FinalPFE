@@ -9,28 +9,9 @@ trigger:
 
 pool:
   name: Dev
-  demands:
-    - npm
-    - Agent.Version
+ 
 
 steps:
-- script: |
-    echo "Checking agent version..."
-    AGENT_VERSION=$(agent.version)
-    REQUIRED_VERSION="2.163.1"
-    if [ "$AGENT_VERSION" \> "$REQUIRED_VERSION" ]; then
-      echo "Agent version is sufficient: $AGENT_VERSION"
-    else
-      echo "Agent version is too low: $AGENT_VERSION. Required: $REQUIRED_VERSION"
-      exit 1
-    fi
-  displayName: 'Check agent version'
-
-- script: npm install
-  displayName: 'Install npm packages'
-
-
-
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
