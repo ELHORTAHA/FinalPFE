@@ -6,7 +6,7 @@
 trigger:
 - main
 
-pool:
+pool: 
   Dev
 
 steps:
@@ -22,6 +22,4 @@ steps:
   inputs:
     versionType: 'AutoVersion'
     projectJsonPath: 'project.json'
-    outputType: 'Process'
-    orchestratorConnection: 'cnt'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
